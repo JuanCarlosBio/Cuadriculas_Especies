@@ -1,3 +1,13 @@
+# No leer los datos de data/
+
+data/*
+!data/README.txt
+
+# No leer los datos de layers
+
+layers/*
+!layerlayerss/README.txt
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
