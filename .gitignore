@@ -1,5 +1,4 @@
 # No leer los datos de data/
-
 data/*
 !data/README.txt
 
@@ -7,6 +6,10 @@ data/*
 
 layers/*
 !layerlayerss/README.txt
+
+# No leer los kml generados en results
+results/*
+!results/README.txt 
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
