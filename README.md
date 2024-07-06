@@ -4,6 +4,4 @@ La idea es crear capas de los Espacios Naturales Protegidos con Cuadrículas par
 
 Tamaño de las cuadrículas:
 
-* 50 x 50 m.
-* 100 x 100 m.
-* 500 x 500 m.
+* Por el momento serán 100 x 100 m, un tamaño ideal para algunos de los ENP, quizás son demasiado pequeñas para espacios de mayor área.
