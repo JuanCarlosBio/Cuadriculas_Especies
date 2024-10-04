@@ -2,6 +2,9 @@
 data/*
 !data/README.txt
 
+analysis/data/*
+!analysis/data/coord_plantae.tsv
+
 # No leer los datos de layers
 
 layers/*
