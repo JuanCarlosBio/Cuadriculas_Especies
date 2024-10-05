@@ -7,5 +7,4 @@ Herramientas usadas principalmente
 
 * Python
 * R
-* QGIS
-
+* GitHub Pages

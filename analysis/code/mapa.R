@@ -1,3 +1,5 @@
+
+## Importamos las librerías que nos interesasn
 library(tidyverse)
 library(sf)
 library(glue)
@@ -8,11 +10,15 @@ library(htmlwidgets)
 bandama_especies <- read_sf("../data/bandama_especies.shp") %>%
   select(-n)
 
+## Procesamos los datos nos intersa resumir en el sentido de que
+## pasamos a tener las especies de unas cuadrículas en una celda de 
+## DataFrame separadas con el operador de HTML <br> para la etiqueta de la WEB
 perfect_bandama_esp <- bandama_especies %>%
   group_by(geometry) |>
   summarise(especies = paste0(glue("<i>{specie}</i>"), collapse = "<br>> "),
             n = n())
 
+## Características de los colores del mapa de calor
 bins <- c(1, 2, 4, 6, Inf)
 pal_perfect_bandama_esp <- colorBin("YlOrRd", domain = perfect_bandama_esp$n, bins = bins)
 
@@ -46,7 +52,5 @@ mapa <- leaflet() %>%
               group = "Especies Protegidas") %>% 
   addResetMapButton() %>%
   addScaleBar("bottomleft", scaleBarOptions(metric = TRUE, imperial = FALSE))
-
-#mapa
 
 saveWidget(mapa, file = "../../index.html")
