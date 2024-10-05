@@ -16,7 +16,7 @@ perfect_bandama_esp <- bandama_especies %>%
 bins <- c(1, 2, 4, 6, Inf)
 pal_perfect_bandama_esp <- colorBin("YlOrRd", domain = perfect_bandama_esp$n, bins = bins)
 
-leaflet() %>%
+mapa <- leaflet() %>%
   setView(-15.455, 28.03, zoom = 16) %>%
   addProviderTiles("Esri.WorldImagery") %>%
     addPolygons(
@@ -47,4 +47,6 @@ leaflet() %>%
   addResetMapButton() %>%
   addScaleBar("bottomleft", scaleBarOptions(metric = TRUE, imperial = FALSE))
 
-saveWidget(map, file = "index.html")
+#mapa
+
+saveWidget(mapa, file = "../../index.html")
