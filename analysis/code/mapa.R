@@ -7,6 +7,9 @@ library(leaflet)
 library(leaflet.extras)
 library(htmlwidgets)
 
+## Hay que estar en la carpeta code análysis
+#setwd("analysis/code/")
+
 bandama_especies <- read_sf("../data/bandama_especies.shp") %>%
   select(-n)
 
@@ -19,7 +22,7 @@ perfect_bandama_esp <- bandama_especies %>%
             n = n())
 
 ## Características de los colores del mapa de calor
-bins <- c(1, 2, 4, 6, Inf)
+bins <- c(1, 2, 4, Inf)
 pal_perfect_bandama_esp <- colorBin("YlOrRd", domain = perfect_bandama_esp$n, bins = bins)
 
 mapa <- leaflet() %>%
@@ -53,4 +56,5 @@ mapa <- leaflet() %>%
   addResetMapButton() %>%
   addScaleBar("bottomleft", scaleBarOptions(metric = TRUE, imperial = FALSE))
 
-saveWidget(mapa, file = "../../index.html")
+saveWidget(mapa, file = "../../index.html",
+           title = "Mapa de calor de especies nativas no protegidas de Bandama")

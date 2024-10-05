@@ -5,6 +5,8 @@ data/*
 analysis/data/*
 !analysis/data/coord_plantae.tsv
 
+index_files/
+
 # No leer los datos de layers
 
 layers/*
