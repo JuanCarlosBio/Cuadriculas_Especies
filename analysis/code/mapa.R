@@ -11,6 +11,7 @@ library(htmlwidgets)
 #setwd("analysis/code/")
 
 bandama_especies <- read_sf("../data/bandama_especies.shp") %>%
+  st_transform( crs = 4326) %>%
   select(-n)
 
 ## Procesamos los datos nos intersa resumir en el sentido de que
@@ -34,9 +35,9 @@ mapa <- leaflet() %>%
       color = "transparent",
       dashArray = "3",
       popup = paste0("<p style='text-align:left;'>",
-                     "<br><strong>Especies Nativas del lugar</strong>", 
-                     "<br>======================", 
-                     glue("<br>==> <strong>Número de especies protegidas en total: <u>{perfect_bandama_esp$n}</u></strong>"),
+                     "<br><strong>Vegetación del lugar 🌱️</strong>", 
+                     "<br>----------------------------------", 
+                     glue("<br> <strong>Número de especies nativas en total: <u>{perfect_bandama_esp$n}</u></strong>"),
                      glue("<br>> {perfect_bandama_esp$especies}"),
                      "</p>") |> 
                 lapply(htmltools::HTML),
@@ -56,5 +57,4 @@ mapa <- leaflet() %>%
   addResetMapButton() %>%
   addScaleBar("bottomleft", scaleBarOptions(metric = TRUE, imperial = FALSE))
 
-saveWidget(mapa, file = "../../index.html",
-           title = "Mapa de calor de especies nativas no protegidas de Bandama")
+saveWidget(mapa, file = "../../index.html", title = "Riqueza de especies")
