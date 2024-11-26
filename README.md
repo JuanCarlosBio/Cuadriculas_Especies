@@ -13,13 +13,13 @@ Para ello se usarán los siguientes datos Públicos:
 
 ### 1. Selección de los ENP.
 
-Para seleccionar los ENP de Bandama y Jinámar en el archivo [workflow.ipynb](workflow.ipynb):
+Para seleccionar el ENP de Bandama en el archivo [workflow.ipynb](workflow.ipynb):
 
 * Celda de *código* del Jupyter nº **<u>10</u>**.
-* Seleccionar el código del ENP <i>(<strong>C-**</strong>)</i>, en el caso de Bandama C-14.
+* Seleccionar el código del ENP <i>(<strong>C-**</strong>)</i>, en el caso de Bandama es el C-14.
 
 ```
-## Selecciona los ENP que quieras generar cuadrículas, ej: Jinámar
+## Selecciona los ENP que quieras generar cuadrículas, ej: Bandama
 enp_seleccion = "C-14"   
 
 enp_seleccionado = enps_gran_canaria_procesado[enps_gran_canaria_procesado["codigo"].isin(enp_seleccion)]
